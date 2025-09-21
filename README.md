@@ -60,6 +60,7 @@
 
 ## 6. 참고 자료
 Unity Documentation
+
 글로벌ICT포털 | VR/AR/MR 시장동향 보고서 2024 | “https://www.globalict.kr/product/product_view.do?menuCode=040200&artclCode=DP0200&catNo=325&p_cateNo=&viewMode=view&knwldNo=144041”
 
 GGIT | [기술] 돌아온 VR 게임, 대중화 시대 열리나 | “https://www.kocca.kr/global/2023_7+8/sub02_04.html”
@@ -77,6 +78,8 @@ Knockback NavMeshAgents using Physics | "https://www.youtube.com/watch?v=0NH5obe
 Visual Design Methods for Virtual Reality, Mike Alger
 
 VR 컨텐츠 제작 시 주의해야 하는 사항들 | "https://www.youtube.com/watch?v=rxC4FasB46M"
+
+The Art of Game Design - Jesse Schell
 
 
 ## 7. 프로젝트 리뷰
