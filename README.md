@@ -20,16 +20,29 @@
 - 프로젝트 에셋 조사 및 관리
 - 프로젝트 관리 및 PC-VR 연동 개발 환경 구축
 - FMOD 설정 및 Audio System 구현
-- 일반 몬스터 AI, 보스 몬스터 AI 구현
-- 플레이어와 몬스터간 상호작용 구현
+- FSM 기반 일반 몬스터 AI 구현
+- Behavior Tree 기반 보스 몬스터 AI 구현
+- 플레이어와 몬스터간 물리 상호작용 및 Hit System 구현
 - 게임 플레이 진행 로직 구현
 - 게임 데이터 관리 시스템 구현
 - VFX, Particle System 최적화
 - 씬 구성, 라이팅 설정 및 최적화
-- 플레이어 UI 구현
+- 플레이어 UI 구현 및 정적 불투명 UI Sprite Atlas 구성
+- Android 빌드 최적화 설정
 
 한유민
+- VR Controller 환경 구성 및 플레이어 조작 구현
+- 총기(Pistol, Rifle) 로직 구현
+- 총기 스킬 시스템 구현
+- 플레이어 스탯 및 레벨업 시스템 구현
+- 플레이어 상태에 따른 HMD Effects 구현
+- 총기 UI 구현
+- 게임 플레이 진행 로직 구현
+- 보스 출현 시 연출 구현
+- Android 빌드 최적화 설정
+- VR 기기 활용 테스트 및 플레이 영상 촬영
 
+  
 ## 목차
 1. 프로젝트 기획 배경
 2. 개발 환경
@@ -40,7 +53,7 @@
 7. 프로젝트 리뷰
 
 
-## 1. 프로젝트 기획 배경
+## 1. 프로젝트 기획 및 VR게임 시장 조사
 여기에 이미지 넣기 (Center로 2장)
 ## 2. 개발 환경
 ##### Unity
@@ -55,7 +68,20 @@
 - Meta Quest 3
 
 ## 3. 사용 에셋
-**Unlimited Music Bundle: Vol. 1**,     **Universal Audio Bundle**,     **Stylized Shoot & Hit Vol.1**,     **Stylized Shoot & Hit Vol.2**,     **UNI VFX: Ulimate pack for Visual Effect Graph**,     **Hybrid Action Music Pack Vol.3**,     **Universal Sound FX**,     **Ultimate Clean GUI Pack**,      **Epic Toon FX**,     **Sci-Fi Battle Weapons**,     **All Sky Free - 10 Sky / SkyBox Set**,     **Droll Robots Pack1**,     **Factory Interior + Warehouse Props Vo1 - Bundle**,     **UNI VFX: Realistic Explosions, Fire & Smoke for Visual Effect Graph**
+**Unlimited Music Bundle: Vol. 1**
+**Universal Audio Bundle**
+**Stylized Shoot & Hit Vol.1**
+**Stylized Shoot & Hit Vol.2**
+**UNI VFX: Ulimate pack for Visual Effect Graph**
+**Hybrid Action Music Pack Vol.3**
+**Universal Sound FX**
+**Ultimate Clean GUI Pack**
+**Epic Toon FX**
+**Sci-Fi Battle Weapons**
+**All Sky Free - 10 Sky / SkyBox Set**
+**Droll Robots Pack1**
+**Factory Interior + Warehouse Props Vo1 - Bundle**
+**UNI VFX: Realistic Explosions, Fire & Smoke for Visual Effect Graph**
 
 
 ## 6. 참고 자료
@@ -126,8 +152,7 @@ Fracturing & Destruction, Bullet Decal 등과 같은 게임 플레이 경험에 
 - 왼손 컨트롤러 조이스틱을 통해 이동
 - 오른손 컨트롤러 조이스틱을 통해 회전
 - 회전 시 Snap Turn Provider을 사용하여 45도로 회전하여 VR 멀미 최소화
-- VR 멀미는 주로 시각 정보와 신체의 평형 감각 사이의 불일치 때문에 발생하는데 부드러운 회전 과정에서 발생하는 지속적인 시각적 움직임 정보를 제거하여 시각 정보와 평형 감각의 불일치를 최소화 하기 위해 Snap Turn을 사용
-- 평균적으로 많이 사용하는 각도인 45도로 설정
+- 시각 정보와 신체의 평형 감각 사이의 불일치로 인해, VR 멀미가 발생할 수 있으므로 부드러운 회전 과정에서 발생하는 지속적인 시각적 움직임 정보를 최소화하기 위해 Snap Turn을 사용
 - 텔레포트 기능은 게임 플레이에 큰 영향을 끼치며 게임 진행 방향성과 맞지 않아 제외 시킴
 - 로그라이크 장르 특성상 360도 방향을 주시해야 하므로, 오른손 컨트롤러 조이스틱을 아래 방향으로 내릴 시 180도 회전하여 바라보는 방향의 반대편을 바로 확인할 수 있도록 설정
 
